@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>Mangaloid</title>
+
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="css/search.css"/>
+    <link rel="stylesheet" type="text/css" href="css/title_list.css"/>
+</head>
+<body>
+    <div id="header">
+        <a href="./catalog.html"><img id="home" src="img/home.png"/></a>
+        <img  id="logo" src="img/logo.png"/>
+    </div>
+
+    <div id="content">
+        <div id="search">
+            <div class="one">
+                <p class="title">Title:</p>
+                <input class="title" type="text" placeholder="Title"></input>
+            </div>
+
+            <div class="two">
+                <p class="artist">Artist:</p>
+                <input class="artist" type="text" placeholder="Artist"></input>
+
+                <p class="author">Author:</p>
+                <input class="author" type="text" placeholder="Author">
+            </div>
+
+            <div class="three">
+                <p class="tags">Tags:</p>
+                <input class="tags" type="text" placeholder="Tags"></input>
+
+            </div>
+            <div class="four">
+                <p class="sort">Sort:</p>
+                <select class="sort">
+                    <option value="name">name</option>
+                    <option value="date">date</option>
+                    <option value="status">status</option>
+                </select>
+            </div>
+            <button onclick="load_results();">Search</button>
+        </div>
+
+        <h2 id="label"></h2>
+
+        <div id="title_list" style="visibility: hidden">
+            <center>
+                <table id="table">
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th><p>Title</p></th>
+                            <th><p>Artist/Author</p></th>
+                            <th><p>Status</p></th>
+                            <th><p>Chapters</p></th>
+                            <th><p>Updated</p></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>
+
+        <div id="footer">
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/title_list.js"></script>
+    <script>
+        var prefix = "https://test.cynic.moe/manga/search?";
+
+        function load_results() {
+            var query = search_full()
+            if(query != ""){
+                console.log("on search", query);
+                load_titles(prefix+query);
+                document.querySelector("#title_list").style.visibility = "visible";
+                document.querySelector("#label").textContent = "Result";
+            }
+        }
+
+        document.onreadystatechange = function () {
+                    if(document.readyState == "interactive"){
+                        var url = window.location.href;
+                        if(url.includes("?")){
+                            var query = url.split("?")[1];
+                            console.log("on load", query);
+                            load_titles(prefix+query);
+                            document.querySelector("#title_list").style.visibility = "visible";
+                            document.querySelector("#label").textContent = "Result";
+                        }
+                    }
+                };
+    </script>
+</body>
+</html>

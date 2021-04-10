@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Mangaloid</title>
+
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="css/stylesheet.css"/>
+    <link rel="stylesheet" href="css/chapter_list.css"/>
+</head>
+<body>
+
+    <div id="header">
+        <a href="./catalog.html"><img id="home" src="img/home.png"/></a>
+        <input  id="search_bar" type="text" placeholder="Search">
+        <button  id="search_button" onclick="search_bar()">Search</button>
+        <img  id="logo" src="img/logo.png"/>
+    </div>
+
+    <div id="content">
+
+        <div id="info">
+            <img id="cover" src=""/>
+            <div id="text">
+            </div>
+        </div>
+
+        <div id="chapters">
+            <center>
+            <table id="table">
+                <tbody>
+                    <tr>
+                        <th>No.</th>
+                        <th class="stretch"><p>Chapter</p></th>
+                        <th><p>TL Group</p></th>
+                        <th><p>Pages</p></th>
+                        <th><p>Date</p></th>
+                    </tr>
+                </tbody>
+            </table>
+            </center>
+        </div>
+
+        <div id="footer">
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/chapter_list.js"></script>
+    <script type="text/javascript" src="js/search_bar.js"></script>
+    <script>
+        document.onreadystatechange = load("https://test.cynic.moe");
+    </script>
+</body>
+</html>
