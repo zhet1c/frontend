@@ -1,6 +1,7 @@
 body {
     font-family: arial, helvetica, sans-serif;
     --dark-grey: rgba(80, 80, 80, 1);
+    --dark-accent: rgba(100, 100, 100, 1);
     --medium-grey: rgba(120, 120, 120, 1);
     --light-accent: rgba(150, 150, 150, 1);
     --light-grey: rgba(180, 180, 180, 1);
@@ -40,6 +41,11 @@ hr {
 
 a {
     text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: var(--dark-grey);
 }
 
 #header {
