@@ -27,7 +27,7 @@ function load_titles(remote) {
             ))
             .appendChild(Object.assign(
                 document.createElement("img"),
-                {className: "thumbnail", src: "img/covers/"+manga["id"]+".jpg"}
+                {className: "thumbnail", src: "https://test.cynic,moe/manga/thumbnail?id="+manga["id"]}
             ));
 
             //title
