@@ -3,12 +3,13 @@
 // ----------------------------------------------------
 
 function load_info(remote, id) {
+    base = remote;
     remote += "/manga/from_id?id=" + id;
     fetch(remote)
     .then(manga => manga.json())
     .then(function (manga) {
         var text = document.querySelector("#info #text");
-        document.getElementById("cover").src = remote+"/manga/thumbnail?id="+id;
+        document.getElementById("cover").src = base+"/manga/thumbnail?id="+id;
 
         text.appendChild(Object.assign(
             document.createElement("h2"),
