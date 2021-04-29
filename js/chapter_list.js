@@ -39,7 +39,7 @@ function load_info(remote, id) {
 
         text.appendChild(Object.assign(
             document.createElement("p"),
-            {textContent: "Last Updated: "}
+            {textContent: "Last Updated: " + manga["last_updated"]}
         ));
 
         var tags = document.createElement("p");
@@ -92,7 +92,7 @@ function load_chapters(remote, id) {
             //date
             row.appendChild(Object.assign(
                 document.createElement("td"),
-                {textContent: new Date(chapter["date_added"]).toLocaleString()}
+                {textContent: new Date(chapter["date_added"] * 1000).toLocaleString()}
             ));
         });
     });
