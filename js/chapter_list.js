@@ -80,7 +80,7 @@ function load_chapters(remote, id) {
             //group
             row.appendChild(Object.assign(
                 document.createElement("td"),
-                {textContent: chapter["group_id"]}
+                {textContent: chapter["scanlator"]["name"]}
             ));
 
             //page count
