@@ -9,7 +9,7 @@ function load_info(remote, id) {
     .then(manga => manga.json())
     .then(function (manga) {
         var text = document.querySelector("#info #text");
-        document.getElementById("cover").src = base+"/manga/thumbnail?id="+id;
+        document.getElementById("cover").src = base+"/thumbnail/"+id+".webp";
 
         text.appendChild(Object.assign(
             document.createElement("h2"),

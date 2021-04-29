@@ -29,7 +29,7 @@ function load_titles(remote) {
             ))
             .appendChild(Object.assign(
                 document.createElement("img"),
-                {className: "thumbnail", src: base+"/manga/thumbnail?id="+manga["id"]}
+                {className: "thumbnail", src: base+"/thumbnail/"+manga["id"]+".webp"}
             ));
             //title
             first_row.appendChild(Object.assign(
