@@ -21,7 +21,7 @@ function load_titles(remote) {
             //thumbnail
             first_row.appendChild(Object.assign(
                 document.createElement("td"),
-                {rowSpan: "2"}
+                {rowSpan: "2", className: "thumbnail"}
             ))
             .appendChild(Object.assign(
                 document.createElement("a"),
@@ -29,12 +29,16 @@ function load_titles(remote) {
             ))
             .appendChild(Object.assign(
                 document.createElement("img"),
-                {className: "thumbnail", src: base+"/manga/thumbnail?id="+manga["id"]}
+                {className: "thumbnail", src: base+"/thumbnail/"+manga["id"]+".webp"}
             ));
             //title
             first_row.appendChild(Object.assign(
                 document.createElement("td"),
-                {}
+                {className: "stretch"}
+            ))
+            .appendChild(Object.assign(
+                document.createElement("a"),
+                {href: "./title.html?id="+manga["id"]}
             ))
             .appendChild(Object.assign(
                 document.createElement("b"),

@@ -9,7 +9,7 @@ function load_info(remote, id) {
     .then(manga => manga.json())
     .then(function (manga) {
         var text = document.querySelector("#info #text");
-        document.getElementById("cover").src = base+"/manga/thumbnail?id="+id;
+        document.getElementById("cover").src = base+"/thumbnail/"+id+".webp";
 
         text.appendChild(Object.assign(
             document.createElement("h2"),
@@ -39,7 +39,7 @@ function load_info(remote, id) {
 
         text.appendChild(Object.assign(
             document.createElement("p"),
-            {textContent: "Last Updated: "}
+            {textContent: "Last Updated: " + manga["last_updated"]}
         ));
 
         var tags = document.createElement("p");
@@ -80,7 +80,7 @@ function load_chapters(remote, id) {
             //group
             row.appendChild(Object.assign(
                 document.createElement("td"),
-                {textContent: chapter["group_id"]}
+                {textContent: chapter["scanlator"]["name"]}
             ));
 
             //page count
@@ -92,7 +92,7 @@ function load_chapters(remote, id) {
             //date
             row.appendChild(Object.assign(
                 document.createElement("td"),
-                {textContent: new Date(chapter["date_added"]).toLocaleString()}
+                {textContent: new Date(chapter["date_added"] * 1000).toLocaleString()}
             ));
         });
     });
