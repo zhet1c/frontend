@@ -11,8 +11,10 @@
 
     <div id="header">
         <a href="./catalog.html"><img id="home" src="img/home.png"/></a>
-        <input  id="search_bar" type="text" placeholder="Search">
-        <button  id="search_button" onclick="search_bar()">Search</button>
+ 	<form action="/search.html">
+                <input id="search_bar" type="search" name="title" placeholder="Search">
+                <button id="search_button" type="submit">Search</button>
+        </form>
         <img  id="logo" src="img/logo.png"/>
     </div>
 
@@ -46,7 +48,6 @@
     </div>
 
     <script type="text/javascript" src="js/chapter_list.js"></script>
-    <script type="text/javascript" src="js/search_bar.js"></script>
     <script>
         document.onreadystatechange = load("https://amangathing.ddns.net/instance");
     </script>

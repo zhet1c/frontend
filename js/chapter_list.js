@@ -36,10 +36,10 @@ function load_info(remote, id) {
             document.createElement("p"),
             {textContent: "Status: " + manga["publication_status"]}
         ));
-
+	var date = new Date(1000 * manga["last_updated"])
         text.appendChild(Object.assign(
             document.createElement("p"),
-            {textContent: "Last Updated: " + manga["last_updated"]}
+            {textContent: "Last Updated: "+date.toLocaleTimeString("en-US")+" "+date.toLocaleDateString("en-US")}
         ));
 
         var tags = document.createElement("p");

@@ -15,35 +15,37 @@
     </div>
 
     <div id="content">
-        <div id="search">
-            <div class="one">
-                <p class="title">Title:</p>
-                <input class="title" type="text" placeholder="Title"></input>
-            </div>
+	<form action="/search.html">
+		<div id="search">
+			<div class="one">
+				<p class="title">Title:</p>
+				<input class="title" type="search" name="title" placeholder="Title"></input>
+			</div>
 
-            <div class="two">
-                <p class="artist">Artist:</p>
-                <input class="artist" type="text" placeholder="Artist"></input>
+			<div class="two">
+				<p class="artist">Artist:</p>
+				<input class="artist" type="search" name="artist" placeholder="Artist"></input>
 
-                <p class="author">Author:</p>
-                <input class="author" type="text" placeholder="Author">
-            </div>
+				<p class="author">Author:</p>
+				<input class="author" type="search" name="author" placeholder="Author">
+			</div>
 
-            <div class="three">
-                <p class="tags">Tags:</p>
-                <input class="tags" type="text" placeholder="Tags"></input>
+			<div class="three">
+				<p class="tags">Tags:</p>
+				<input class="tags" type="search" name="tags" placeholder="Tags"></input>
 
-            </div>
-            <div class="four">
-                <p class="sort">Sort:</p>
-                <select class="sort">
-                    <option value="name">name</option>
-                    <option value="date">date</option>
-                    <option value="status">status</option>
-                </select>
-            </div>
-            <button onclick="load_results();">Search</button>
-        </div>
+			</div>
+			<div class="four">
+				<p class="sort">Sort:</p>
+				<select name="sort" class="sort">
+					<option value="name">name</option>
+					<option value="date">date</option>
+					<option value="status">status</option>
+				</select>
+			</div>
+			<button type="submit">Search</button>
+		</div>
+	</form>
 
         <h2 id="label"></h2>
 
@@ -69,34 +71,16 @@
 
     </div>
 
-
-    <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript" src="js/title_list.js"></script>
     <script>
-        var prefix = "https://amangathing.ddns.net/instance/manga/search?";
-
-        function load_results() {
-            var query = search_full()
-            if(query != ""){
-                console.log("on search", query);
-                load_titles(prefix+query);
-                document.querySelector("#title_list").style.visibility = "visible";
-                document.querySelector("#label").textContent = "Result";
-            }
-        }
-
         document.onreadystatechange = function () {
-                    if(document.readyState == "interactive"){
-                        var url = window.location.href;
-                        if(url.includes("?")){
-                            var query = url.split("?")[1];
-                            console.log("on load", query);
-                            load_titles(prefix+query);
-                            document.querySelector("#title_list").style.visibility = "visible";
-                            document.querySelector("#label").textContent = "Result";
-                        }
-                    }
-                };
+		if(document.readyState == "interactive") {
+			console.log("on load");
+			load_titles("https://amangathing.ddns.net/instance/manga/search"+window.location.search);
+			document.querySelector("#title_list").style.visibility = "visible";
+			document.querySelector("#label").textContent = "Result";
+		}
+        }
     </script>
 </body>
 </html>
