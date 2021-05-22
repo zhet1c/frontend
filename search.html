@@ -75,16 +75,11 @@
     <script type="text/javascript" src="js/title_list.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
     <script>
-        var prefix = "https://amangathing.ddns.net/instance/manga/search?";
-
         document.onreadystatechange = function () {
-            var query = search_full()
-            if(query != ""){
-                console.log("on load", query);
-                load_titles(prefix+query);
+                console.log("on load");
+                load_titles("https://amangathing.ddns.net/instance/manga/search"+window.location.search);
                 document.querySelector("#title_list").style.visibility = "visible";
                 document.querySelector("#label").textContent = "Result";
-            }
         }
     </script>
 </body>
