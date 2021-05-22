@@ -9,8 +9,10 @@
 <body>
     <div id="header">
         <a href="./catalog.html"><img id="home" src="img/home.png"/></a>
-        <input id="search_bar" type="text" placeholder="Search">
-        <button id="search_button" onclick="search_bar()">Search</button>
+ 	<form action="/search.html">
+                <input id="search_bar" type="search" name="title" placeholder="Search">
+                <button id="search_button" type="submit">Search</button>
+        </form>
         <img id="logo" src="img/logo.png"/>
     </div>
 
@@ -19,6 +21,5 @@
         </div>
     </div>
 
-    <script type="text/javacript" src="js/search_bar.js"></script>
 </body>
 </html>
