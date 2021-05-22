@@ -71,15 +71,15 @@
 
     </div>
 
-
     <script type="text/javascript" src="js/title_list.js"></script>
-    <script type="text/javascript" src="js/search.js"></script>
     <script>
         document.onreadystatechange = function () {
-                console.log("on load");
-                load_titles("https://amangathing.ddns.net/instance/manga/search"+window.location.search);
-                document.querySelector("#title_list").style.visibility = "visible";
-                document.querySelector("#label").textContent = "Result";
+		if(document.readyState == "interactive") {
+			console.log("on load");
+			load_titles("https://amangathing.ddns.net/instance/manga/search"+window.location.search);
+			document.querySelector("#title_list").style.visibility = "visible";
+			document.querySelector("#label").textContent = "Result";
+		}
         }
     </script>
 </body>
