@@ -95,6 +95,7 @@ a:visited {
 #content {
     position: absolute;
     width: 80%;
+    height: auto;
     left: 10%;
     top: 5em;
     bottom: 0em;
