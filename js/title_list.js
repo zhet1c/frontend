@@ -3,9 +3,8 @@
 // ----------------------------------------------------------------
 
 function load_titles(remote) {
-    if(remote == ""){
-        return;
-    }
+    base = remote;
+    remote = remote+"/manga/search?title=";
     fetch(remote)
     .then(res => res.json())
     .then(function (res) {
@@ -27,7 +26,7 @@ function load_titles(remote) {
             ))
             .appendChild(Object.assign(
                 document.createElement("img"),
-                {className: "thumbnail", src: "/instance/thumbnail/"+manga["id"]+".webp"}
+                {className: "thumbnail", src: base+"/thumbnail/"+manga["id"]+".webp"}
             ));
             //title
             first_row.appendChild(Object.assign(

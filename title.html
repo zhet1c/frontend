@@ -48,8 +48,15 @@
     </div>
 
     <script type="text/javascript" src="js/chapter_list.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
     <script>
-        document.onreadystatechange = load("https://amangathing.ddns.net/instance");
+	document.onreadystatechange = function () {
+	    if(document.readyState == "interactive") {
+		    var addr = get_instance();
+		    console.log("loading from "+addr);
+	    	load("https://"+addr);
+	    }
+	}
     </script>
 </body>
 </html>

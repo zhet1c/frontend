@@ -17,9 +17,29 @@
     </div>
 
     <div id="content">
+	<div style="position:relative;top:20px;">
+		<p>Instance address:</p>
+		<input style="width:500px" id="address" placeholder="test.cynic.moe"></input>
+		<button onclick="update_address()">Update</button>
+		<button onclick="clear_instance()">Default</button>
+		<p>Current: </p><p id="instance_addr"></p>
+	</div>
         <div id="footer">
         </div>
     </div>
+
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script>
+	document.onreadystatechange = function () {
+	    var addr = get_instance(); 
+	    document.getElementById("instance_addr").innerHTML = addr;
+	}
+	function update_address() {
+	    var addr = document.getElementById("address").value;
+	    set_instance(addr);
+	    console.log(addr);
+	}
+    </script>
 
 </body>
 </html>

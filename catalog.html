@@ -41,8 +41,15 @@
     </div>
 
     <script type="text/javascript" src="js/title_list.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
     <script>
-        document.onreadystatechange = load_titles("https://amangathing.ddns.net/instance/manga/search?title=a");
+	    document.onreadystatechange = function () {
+		if(document.readyState == "interactive") {
+		    var addr = get_instance();
+		    console.log("loading from "+addr);
+		    load_titles("https://"+addr);
+		}
+	    }
     </script>
 </body>
 </html>
