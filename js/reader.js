@@ -181,7 +181,7 @@ document.querySelector("#titlebar_container").addEventListener("mouseleave", fun
 // parse metadata
 // ---------------------------------------------------------
 
-function load_pages() {
+function load_pages(remote) {
     if(url.searchParams.has("cid")){
         cid = url.searchParams.get("cid");
         if(cid == ""){
@@ -204,7 +204,7 @@ function load_pages() {
         for (var i = 1; i <= pageNo; i++) {
             pageView.appendChild(Object.assign(
                 document.createElement("img"),
-                {draggable: "false", src: `https://amangathing.ddns.net/ipfs/${cid}/${i}.webp`, id: `image${i}`, visibility: "hidden"}
+                {draggable: "false", src: `https://ipfs.cynic.moe/ipfs/${cid}/${i}.webp`, id: `image${i}`, visibility: "hidden"}
             ));
         }
 

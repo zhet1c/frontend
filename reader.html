@@ -44,10 +44,11 @@
         <script type="text/javascript" src="js/reader.js"></script>
         <script>
             document.onreadystatechange = function () {
-                            if(document.readyState == "interactive"){
-                                load_pages();
-                            }
-                        };
+                if(document.readyState == "interactive"){
+		    var addr = decodeURIComponent(document.cookie).split(";")[0].split("=")[1];
+                    load_pages("https://"+addr);
+                }
+            }
         </script>
     </body>
 </html>
