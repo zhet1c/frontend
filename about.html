@@ -1,45 +1,50 @@
 <html>
+
 <head>
     <title>Mangaloid</title>
 
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
 
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 </head>
+
 <body>
     <div id="header">
-        <a href="./catalog.html"><img id="home" src="img/home.png"/></a>
- 	<form action="/search.html">
-                <input id="search_bar" type="search" name="title" placeholder="Search">
-                <button id="search_button" type="submit">Search</button>
+        <a href="./catalog.html"><img id="home" src="img/home.png" /></a>
+        <form action="/search.html">
+            <input id="search_bar" type="search" name="title" placeholder="Search">
+            <button id="search_button" type="submit">Search</button>
         </form>
-        <img id="logo" src="img/logo.png"/>
+        <img id="logo" src="img/logo.png" />
     </div>
 
     <div id="content">
-	<div style="position:relative;top:20px;">
-		<p>Instance address:</p>
-		<input style="width:500px" id="address" placeholder="test.cynic.moe"></input>
-		<button onclick="update_address()">Update</button>
-		<button onclick="clear_instance()">Default</button>
-		<p>Current: </p><p id="instance_addr"></p>
-	</div>
+        <div style="position:relative;top:20px;">
+            <p>Instance address:</p>
+            <input style="width:500px" id="address" placeholder="test.cynic.moe"></input>
+            <button onclick="update_address()">Update</button>
+            <button onclick="clear_instance()">Default</button>
+            <p>Current: </p>
+            <p id="instance_addr"></p>
+        </div>
         <div id="footer">
         </div>
     </div>
 
-    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/instance.js"></script>
     <script>
-	document.onreadystatechange = function () {
-	    var addr = get_instance(); 
-	    document.getElementById("instance_addr").innerHTML = addr;
-	}
-	function update_address() {
-	    var addr = document.getElementById("address").value;
-	    set_instance(addr);
-	    console.log(addr);
-	}
+        document.onreadystatechange = function () {
+            var addr = get_instance();
+            document.getElementById("address").setAttribute("placeholder", DEFAULT_INSTANCE);
+            document.getElementById("instance_addr").innerHTML = addr;
+        }
+        function update_address() {
+            var addr = document.getElementById("address").value;
+            set_instance(addr);
+            console.log(addr);
+        }
     </script>
 
 </body>
+
 </html>
