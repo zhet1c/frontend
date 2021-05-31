@@ -80,21 +80,15 @@
     </div>
 
     <script type="text/javascript" src="js/title_list.js"></script>
+	<script type="text/javascript" src="js/instance.js"></script>
     <script>
         document.onreadystatechange = function () {
 		if(document.readyState == "interactive") {
-<<<<<<< HEAD
-		    var addr = decodeURIComponent(document.cookie).split(";")[0].split("=")[1];
+		    let addr = get_instance();
 		    console.log("loading from "+addr);
 		    load_titles("https://"+addr+"/manga/search"+window.location.search);
 		    document.querySelector("#title_list").style.visibility = "visible";
 		    document.querySelector("#label").textContent = "Result";
-=======
-			console.log("on load");
-			load_titles("https://amangathing.ddns.net/instance/manga/search"+window.location.search);
-			document.querySelector("#title_list").style.visibility = "visible";
-			document.querySelector("#label").textContent = "Result";
->>>>>>> b91c43f186414c87cd93ead9d8111707b3ac9565
 		}
         }
     </script>
