@@ -61,11 +61,45 @@ a:visited {
     overflow: hidden;
 }
 
-#header #home {
-    position: relative;
-    height: 40%;
-    top: 30%;
-    left: 2em;
+#header #menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5em;
+    height: 5em;
+}
+
+#header #menu #menu-icon {
+    position: fixed;
+    top: 1.5em;
+    left: 1.5em;
+    height: 2em;
+    width: 2em;
+}
+
+#header #menu #menu-items {
+    position: fixed;
+    display: none;
+    top: 5em;
+    width: 250px;
+    height: auto;
+    z-index: 1;
+}
+
+#header #menu #menu-items a {
+    display: block;
+    color: black;
+    background-color: var(--light-accent);
+    font-size: 15px;
+    padding: 15px;
+}
+
+#header #menu:hover #menu-items {
+    display: block;
+}
+
+#header #menu #menu-items a:hover {
+    background-color: var(--medium-grey);
 }
 
 #header #search_bar {
