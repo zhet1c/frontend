@@ -8,7 +8,15 @@
 </head>
 <body>
     <div id="header">
-        <a href="./catalog.html"><img id="home" src="img/home.png"/></a>
+	<div id="menu">
+	    <img id="menu-icon" src="img/home.png"/>
+	    <div id="menu-items">
+	        <a href="./catalog.html">Catalog</a>
+		<a href="./search.html">Search</a>
+		<a href="">Tags</a>
+		<a href="./about.html">About</a>
+	    </div>
+	</div>
  	<form action="/search.html">
                 <input id="search_bar" type="search" name="title" placeholder="Search">
                 <button id="search_button" type="submit">Search</button>
@@ -17,12 +25,27 @@
     </div>
 
     <div id="content">
-	<div style="position:relative;top:20px;">
-		<p>Instance address:</p>
-		<input style="width:500px" id="address" placeholder="test.cynic.moe"></input>
-		<button onclick="update_address()">Update</button>
-		<button onclick="clear_instance()">Default</button>
-		<p>Current: </p><p id="instance_addr"></p>
+	<div style="display:block">
+	    <h2>About</h2>	
+	    <p>
+	    This site is licensed under the MIT free software license, and is accessible through <a href="https://github.com/a-manga-thing"><u>our github</u></a>.
+	    </p>
+	    <p>
+	    Mangaloid operates as a network of instances, each serving a subset of manga. Our example interface pulls all it's metadata from the <a href="https://test.cynic.moe/info"><u>REST api</u></a> of one of these hosts. You are free to host your own instance or interface as you see fit.
+	    </p>
+	    <p>
+	    Images are stored and loaded in a distributed manner via a number of <a href="https://ipfs.io"><u>IPFS</u></a> nodes and gateways hosted by volunteers. The easiest way to improve loading times is to host your own node.
+	    </p>
+	    <p>
+	    Feel free to stop by our IRC channel if you have questions: irc.rizon.net #mangaloid
+	    </p>
+	</div>
+	<div style="display:block;position:relative;">
+	    <h2>Instance address:</h2>
+	    <input style="width:500px" id="address" placeholder="test.cynic.moe"></input>
+	    <button onclick="update_address()">Update</button>
+	    <button onclick="clear_instance()">Default</button>
+	    <p>Current: </p><p id="instance_addr"></p>
 	</div>
         <div id="footer">
         </div>
